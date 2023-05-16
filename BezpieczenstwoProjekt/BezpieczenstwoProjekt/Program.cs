@@ -1,4 +1,6 @@
 using BezpieczenstwoProjekt.Models.Domain;
+using BezpieczenstwoProjekt.Repositories.Abstract;
+using BezpieczenstwoProjekt.Repositories.Implementation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +17,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddDefaultTokenProviders();
 
 builder.Services.ConfigureApplicationCookie(op => op.LoginPath = "/UserAuthentication/Login");
+builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.

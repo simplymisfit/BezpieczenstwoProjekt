@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ma9CY6zlvlzcBjyh5KYHHm5W3tX3v5aPu+X3mVFhXya0DRY6PqDR542AKHIFRT7RrOsUZ/dfoskStkDSknZm0A==",
+  "dgSpecHash": "dubsgLrJiDVw9E9uWteBOq6HBgXwF8J3sIesz2KnLkjG11pfFv6clNVvkX3HzoHR5xghzC4smWlNr8Bd2qvu/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rosoc\\Documents\\GitHub\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt.csproj",
+  "projectFilePath": "D:\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rosoc\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\rosoc\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.16\\microsoft.aspnetcore.cryptography.internal.6.0.16.nupkg.sha512",
@@ -53,12 +53,5 @@
     "C:\\Users\\rosoc\\.nuget\\packages\\system.text.encoding.codepages\\4.7.0\\system.text.encoding.codepages.4.7.0.nupkg.sha512",
     "C:\\Users\\rosoc\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1803",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://nuget.epicode.net/api/v2/'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
-    }
-  ]
+  "logs": []
 }

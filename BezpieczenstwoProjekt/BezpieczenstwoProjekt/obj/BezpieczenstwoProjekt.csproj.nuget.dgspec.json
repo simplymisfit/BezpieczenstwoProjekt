@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rosoc\\Documents\\GitHub\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt.csproj": {}
+    "D:\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rosoc\\Documents\\GitHub\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt.csproj": {
+    "D:\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rosoc\\Documents\\GitHub\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt.csproj",
+        "projectUniqueName": "D:\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt.csproj",
         "projectName": "BezpieczenstwoProjekt",
-        "projectPath": "C:\\Users\\rosoc\\Documents\\GitHub\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt.csproj",
+        "projectPath": "D:\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt.csproj",
         "packagesPath": "C:\\Users\\rosoc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rosoc\\Documents\\GitHub\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\obj\\",
+        "outputPath": "D:\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -25,8 +25,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Work\\Packages": {},
-          "http://nuget.epicode.net/api/v2/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -79,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }

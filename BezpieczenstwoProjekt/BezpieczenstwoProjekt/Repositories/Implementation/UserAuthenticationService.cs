@@ -62,6 +62,15 @@ namespace BezpieczenstwoProjekt.Repositories.Implementation
             }
 
             //Role management
+            if (!await _roleManager.RoleExistsAsync(model.Role))
+                await _roleManager.CreateAsync(new IdentityRole(model.Role));
+
+            if (await _roleManager.RoleExistsAsync(model.Role))
+                await _userManager.AddToRoleAsync(user, model.Role);
+
+            status.StatusCode = 1;
+            status.StatusMessage = "User has registered successfully";
+            return status;
         }
     }
 }

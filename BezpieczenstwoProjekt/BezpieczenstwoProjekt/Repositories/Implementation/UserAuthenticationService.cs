@@ -29,7 +29,7 @@ namespace BezpieczenstwoProjekt.Repositories.Implementation
 
         public async Task LogoutAsync()
         {
-            throw new NotImplementedException();
+            await _signInManager.SignOutAsync();
         }
 
         public async Task<Status> RegisterAsync(Registration model)

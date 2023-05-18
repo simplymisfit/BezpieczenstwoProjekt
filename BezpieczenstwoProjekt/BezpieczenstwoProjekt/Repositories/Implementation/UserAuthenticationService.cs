@@ -1,4 +1,5 @@
-﻿using BezpieczenstwoProjekt.Models.Domain;
+﻿using System.Security.Claims;
+using BezpieczenstwoProjekt.Models.Domain;
 using BezpieczenstwoProjekt.Models.Dto;
 using BezpieczenstwoProjekt.Repositories.Abstract;
 using Microsoft.AspNetCore.Identity;
@@ -24,7 +25,48 @@ namespace BezpieczenstwoProjekt.Repositories.Implementation
 
         public async Task<Status> LoginAsync(Login model)
         {
-            throw new NotImplementedException();
+            var status = new Status();
+            var user = await _userManager.FindByNameAsync(model.Username);
+            if (user == null)
+            {
+                status.StatusCode = 0;
+                status.StatusMessage = "Invalid username";
+                return status;
+            }
+
+            if (!await _userManager.CheckPasswordAsync(user, model.Password))
+            {
+                status.StatusCode = 0;
+                status.StatusMessage = "Invalid password";
+                return status;
+            }
+
+            var signInResult = await _signInManager.PasswordSignInAsync(user, model.Password, false, true);
+            if (signInResult.Succeeded)
+            {
+                var userRoles = await _userManager.GetRolesAsync(user);
+                var authClaims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, user.UserName)
+                };
+                authClaims.AddRange(userRoles.Select(userRole => new Claim(ClaimTypes.Role, userRole)));
+
+                status.StatusCode = 1;
+                status.StatusMessage = "Logged in successfully";
+                return status;
+            }
+            else if (signInResult.IsLockedOut)
+            {
+                status.StatusCode = 0;
+                status.StatusMessage = "User locked out";
+                return status;
+            }
+            else
+            {
+                status.StatusCode = 0;
+                status.StatusMessage = "Error on logging in";
+                return status;
+            }
         }
 
         public async Task LogoutAsync()

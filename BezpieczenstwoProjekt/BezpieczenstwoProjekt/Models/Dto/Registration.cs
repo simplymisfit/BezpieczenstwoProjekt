@@ -5,7 +5,9 @@ namespace BezpieczenstwoProjekt.Models.Dto
     public class Registration
     {
         [Required]
-        public string Name { get; set; }
+        public string FirstName { get; set; }
+        [Required]
+        public string LastName { get; set; }
         [Required]
         [EmailAddress]
         public string Email { get; set; }

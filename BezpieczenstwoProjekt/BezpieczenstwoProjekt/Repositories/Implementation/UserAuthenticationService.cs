@@ -89,7 +89,8 @@ namespace BezpieczenstwoProjekt.Repositories.Implementation
             ApplicationUser user = new ApplicationUser
             {
                 SecurityStamp = Guid.NewGuid().ToString(),
-                Name = model.Name,
+                FirstName = model.FirstName,
+                LastName = model.LastName,
                 Email = model.Email,
                 UserName = model.Username,
                 EmailConfirmed = true,
@@ -113,6 +114,32 @@ namespace BezpieczenstwoProjekt.Repositories.Implementation
             status.StatusCode = 1;
             status.StatusMessage = "User has registered successfully";
             return status;
+        }
+        
+        public async Task<Status> ChangePasswordAsync(ChangePassword model,string username)
+        {
+            var status = new Status();
+            
+            var user = await _userManager.FindByNameAsync(username);
+            if (user == null)
+            {
+                status.StatusMessage = "User does not exist";
+                status.StatusCode = 0;
+                return status;
+            }
+            var result = await _userManager.ChangePasswordAsync(user, model.CurrentPassword, model.NewPassword);
+            if (result.Succeeded)
+            {
+                status.StatusMessage = "Password has updated successfully";
+                status.StatusCode = 1;
+            }
+            else
+            {
+                status.StatusMessage = "Some error occcured";
+                status.StatusCode = 0;
+            }
+            return status;
+
         }
     }
 }

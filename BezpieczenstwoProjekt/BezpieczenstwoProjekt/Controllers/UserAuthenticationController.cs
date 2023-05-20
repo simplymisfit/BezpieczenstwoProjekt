@@ -59,7 +59,8 @@ public class UserAuthenticationController : Controller
         var model = new Registration
         {
             Username = "admin",
-            Name = "Filip",
+            FirstName = "Filip",
+            LastName = "Nazwisko",
             Email = "admin@gmail.com",
             Password = "!QAZ2wsx",
             Role = "admin"
@@ -67,5 +68,16 @@ public class UserAuthenticationController : Controller
         
         var result = await _service.RegisterAsync(model);
         return Ok(result);
+    }
+    
+    [Authorize]
+    [HttpPost]
+    public async Task<IActionResult>ChangePassword(ChangePassword model)
+    {
+        if (!ModelState.IsValid)
+            return View(model);
+        var result = await _service.ChangePasswordAsync(model, User.Identity.Name);
+        TempData["msg"] = result.StatusMessage;
+        return RedirectToAction(nameof(ChangePassword));
     }
 }

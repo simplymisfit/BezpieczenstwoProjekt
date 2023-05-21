@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Repos\BezpieczenstwoProjekt\BezpieczenstwoProjekt\BezpieczenstwoProjekt
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Repos/BezpieczenstwoProjekt/BezpieczenstwoProjekt/BezpieczenstwoProjekt/Views/Admin/Display.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGlzcGxheS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Repos/BezpieczenstwoProjekt/BezpieczenstwoProjekt/BezpieczenstwoProjekt/Views/Dashboard/Display.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXERpc3BsYXkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

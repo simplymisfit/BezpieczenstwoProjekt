@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "D0S0RCblJ07+skaxrkcj4mlUuc5i2ft9EY9BlC8sEZI=",
+  "Hash": "MkdHiyy3m88UqqpjO10b5tXGrZ65zFafjULYx2mmaDk=",
   "Source": "BezpieczenstwoProjekt",
   "BasePath": "_content/BezpieczenstwoProjekt",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\BezpieczenstwoProjekt.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\wwwroot\\css\\bootstrap.min.css",
+      "SourceId": "BezpieczenstwoProjekt",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\wwwroot\\",
+      "BasePath": "_content/BezpieczenstwoProjekt",
+      "RelativePath": "css/bootstrap.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\bootstrap.min.css"
     },
     {
       "Identity": "D:\\Repos\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\BezpieczenstwoProjekt\\wwwroot\\css\\site.css",

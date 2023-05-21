@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BezpieczenstwoProjekt.Controllers;
 
+[Authorize]
 public class DashboardController : Controller
 {
-    [Authorize(Roles = "admin")]
     public IActionResult Display()
     {
         return View();

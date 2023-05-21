@@ -1,6 +1,10 @@
 ﻿namespace BezpieczenstwoProjekt.Controllers;
 
-public class AdminController
+[Authorize(Roles = "admin")]
+public class AdminController : Controller
 {
-    
+    public IActionResult Display()
+    {
+        return View();
+    }
 }

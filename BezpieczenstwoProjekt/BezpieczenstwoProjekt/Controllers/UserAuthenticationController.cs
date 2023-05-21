@@ -7,36 +7,25 @@ namespace BezpieczenstwoProjekt.Controllers;
 
 public class UserAuthenticationController : Controller
 {
-    private readonly IUserAuthenticationService _service;
-    
-    public UserAuthenticationController(IUserAuthenticationService service)
+    private readonly IUserAuthenticationService _authService;
+    public UserAuthenticationController(IUserAuthenticationService authService)
     {
-        _service = service;
+        this._authService = authService;
     }
 
-    [HttpPost]
-    public async Task<IActionResult> Registration(Registration model)
-    {
-        if (!ModelState.IsValid) return View(model);
 
-        model.Role = "user";
-        
-        var result = await _service.RegisterAsync(model);
-        TempData["msg"] = result.StatusMessage;
-        return RedirectToAction(nameof(Registration));
-    }
-    
     public IActionResult Login()
     {
         return View();
     }
 
+
     [HttpPost]
     public async Task<IActionResult> Login(Login model)
     {
-        if (!ModelState.IsValid) return View(model);
-
-        var result = await _service.LoginAsync(model);
+        if (!ModelState.IsValid)
+            return View(model);
+        var result = await _authService.LoginAsync(model);
         if (result.StatusCode == 1)
         {
             return RedirectToAction("Display", "Dashboard");
@@ -48,35 +37,56 @@ public class UserAuthenticationController : Controller
         }
     }
 
-    [Authorize]
-    public async Task Logout()
+    public IActionResult Registration()
     {
-        await _service.LogoutAsync();
+        return View();
     }
 
-    public async Task<IActionResult> Reg()
+    [HttpPost]
+    public async Task<IActionResult> Registration(Registration model)
     {
-        var model = new Registration
-        {
-            Username = "admin",
-            FirstName = "Filip",
-            LastName = "Nazwisko",
-            Email = "admin@gmail.com",
-            Password = "!QAZ2wsx",
-            Role = "admin"
-        };
-        
-        var result = await _service.RegisterAsync(model);
-        return Ok(result);
+        if (!ModelState.IsValid) { return View(model); }
+        model.Role = "user";
+        var result = await this._authService.RegisterAsync(model);
+        TempData["msg"] = result.StatusMessage;
+        return RedirectToAction(nameof(Registration));
     }
-    
+
+    [Authorize]
+    public async Task<IActionResult> Logout()
+    {
+        await this._authService.LogoutAsync();
+        return RedirectToAction(nameof(Login));
+    }
+    //[AllowAnonymous]
+    //public async Task<IActionResult> RegisterAdmin()
+    //{
+    //    RegistrationModel model = new RegistrationModel
+    //    {
+    //        Username="admin",
+    //        Email="admin@gmail.com",
+    //        FirstName="John",
+    //        LastName="Doe",
+    //        Password="Admin@12345#"
+    //    };
+    //    model.Role = "admin";
+    //    var result = await this._authService.RegisterAsync(model);
+    //    return Ok(result);
+    //}
+
+    [Authorize]
+    public IActionResult ChangePassword()
+    {
+        return View();
+    }
+
     [Authorize]
     [HttpPost]
-    public async Task<IActionResult>ChangePassword(ChangePassword model)
+    public async Task<IActionResult> ChangePassword(ChangePassword model)
     {
         if (!ModelState.IsValid)
             return View(model);
-        var result = await _service.ChangePasswordAsync(model, User.Identity.Name);
+        var result = await _authService.ChangePasswordAsync(model, User.Identity.Name);
         TempData["msg"] = result.StatusMessage;
         return RedirectToAction(nameof(ChangePassword));
     }

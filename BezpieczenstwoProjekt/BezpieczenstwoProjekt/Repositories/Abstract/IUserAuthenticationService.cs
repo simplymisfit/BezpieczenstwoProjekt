@@ -7,5 +7,6 @@ namespace BezpieczenstwoProjekt.Repositories.Abstract
         Task<Status> LoginAsync(Login model);
         Task<Status> RegisterAsync(Registration model);
         Task LogoutAsync();
+        Task<Status> ChangePasswordAsync(ChangePassword model, string username);
     }
 }

@@ -1,5 +1,5 @@
 ﻿using BezpieczenstwoProjekt.Models.Dto;
-using BezpieczenstwoProjekt.Repositories.Implementation;
+using BezpieczenstwoProjekt.Repositories.Abstract;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,9 +7,9 @@ namespace BezpieczenstwoProjekt.Controllers;
 
 public class UserAuthenticationController : Controller
 {
-    private readonly UserAuthenticationService _service;
+    private readonly IUserAuthenticationService _service;
     
-    public UserAuthenticationController(UserAuthenticationService service)
+    public UserAuthenticationController(IUserAuthenticationService service)
     {
         _service = service;
     }

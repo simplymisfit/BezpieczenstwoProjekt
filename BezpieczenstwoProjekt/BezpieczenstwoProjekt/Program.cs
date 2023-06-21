@@ -16,7 +16,9 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<DatabaseContext>()
     .AddDefaultTokenProviders();
 
-builder.Services.ConfigureApplicationCookie(op => op.LoginPath = "/UserAuthentication/Login");
+builder.Services.ConfigureApplicationCookie(op => 
+    op.LoginPath = "/UserAuthentication/Login"
+);
 builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
 
 var app = builder.Build();

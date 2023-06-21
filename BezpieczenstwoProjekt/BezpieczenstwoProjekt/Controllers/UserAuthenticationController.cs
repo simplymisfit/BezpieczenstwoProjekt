@@ -58,21 +58,22 @@ public class UserAuthenticationController : Controller
         await this._authService.LogoutAsync();
         return RedirectToAction(nameof(Login));
     }
-    //[AllowAnonymous]
-    //public async Task<IActionResult> RegisterAdmin()
-    //{
-    //    RegistrationModel model = new RegistrationModel
-    //    {
-    //        Username="admin",
-    //        Email="admin@gmail.com",
-    //        FirstName="John",
-    //        LastName="Doe",
-    //        Password="Admin@12345#"
-    //    };
-    //    model.Role = "admin";
-    //    var result = await this._authService.RegisterAsync(model);
-    //    return Ok(result);
-    //}
+
+    [AllowAnonymous]
+    public async Task<IActionResult> RegisterAdmin()
+    {
+        Registration model = new Registration
+        {
+            Username = "admin",
+            Email = "admin@gmail.com",
+            FirstName = "John",
+            LastName = "Doe",
+            Password = "Admin@12345#"
+        };
+        model.Role = "admin";
+        var result = await this._authService.RegisterAsync(model);
+        return Ok(result);
+    }
 
     [Authorize]
     public IActionResult ChangePassword()
